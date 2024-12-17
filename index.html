@@ -13,7 +13,7 @@
 		
 		<div id="BaseMenuleftPart">
 
-			<div class="Infoblock"> 										
+			<div onmouseover="changeToOnMouseVersion" class="Infoblock" id="adressInfoBlock"> 										
 				<a href="stub_pages\authorizationPage_adress.html" name="adress">
 					<img src="icons\adress.png" class="img">
 				</a>
@@ -36,7 +36,24 @@
 					<img src="icons\info.png" class="img">
 				</a>
 			</div>
-		
+
+		<script>
+        // Get all elements with the class 'Infoblock'
+        const infoBlocks = document.querySelectorAll('.Infoblock');
+
+        // Loop through each of them and add event listeners
+        infoBlocks.forEach(block => {
+            block.addEventListener('mouseover', () => {
+                block.classList.add('InfoblockOnMouseVersion');
+            });
+
+            block.addEventListener('mouseout', () => {
+                block.classList.remove('InfoblockOnMouseVersion');
+            });
+        });
+    	</script>
+
+
 		</div>
 
 
@@ -66,5 +83,23 @@
     		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     	</h1>
+
+    	<script>
+    		const headname = document.getElementById("headName");
+    		const mainBlock= document.getElementById("Main_block");
+
+    		headname.addEventListener('click', ()=>{
+    			const img = document.createElement("img");
+    			img.setAttribute("src","icons\\among-us-fp.gif")
+
+
+    			mainBlock.removeChild(document.getElementById("MainText"));
+    			mainBlock.appendChild(img);
+
+    		})
+
+    		
+    	</script>
+
     </div>
 </body>
